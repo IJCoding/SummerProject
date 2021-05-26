@@ -8,6 +8,9 @@ public class TargetPlayer : MonoBehaviour
     [TooltipAttribute("This variable will set the speed of the movement")]
     public float speed = 3.5f;
 
+    [Range(0, 10)]
+    [TooltipAttribute("This variable will set from which distance does the enemy follow the player")]
+    public float distance = 3f;
     private Transform target;
     // Start is called before the first frame update
     void Start()
@@ -18,6 +21,10 @@ public class TargetPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        if (Vector2.Distance(transform.position, target.position) > distance)           //if the distance is greater than the variable given the condition will be trigered
+        {
+           transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        }        
+
     }
 }
