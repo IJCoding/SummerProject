@@ -1,0 +1,21 @@
+GameObject Target - reference stored locally
+GameObject OldTarget - what was being targetted before 
+GameObject Self - 
+int AcceptanceRange - when a "collision" occurs or the self is happy with it's range
+
+
+bool CheckTarget(Target)
+	return (Absolute (target.location - self.location) < Acceptance Range)
+
+ChooseTarget()
+	tempTarget = Target
+	Target = OldTarget
+	OldTarget = Target
+
+MoveTo(Target)
+	Self.MoveTo(Target)	- This is to use a local movement version of the script (so flying things fly, etc)
+
+
+Attack(Target)
+	If (CheckTarget)
+		Self.AttackTarget(Target) - This is to use a local verstion of the script (so ranged will use ranged, etc)
