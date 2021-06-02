@@ -1541,8 +1541,9 @@ GameObject:
   - component: {fileID: 752490664}
   - component: {fileID: 752490663}
   - component: {fileID: 752490662}
-  - component: {fileID: 752490665}
   - component: {fileID: 752490666}
+  - component: {fileID: 752490668}
+  - component: {fileID: 752490667}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1636,21 +1637,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &752490665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 752490661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21d6f53711464ac47adcf7a80251ca13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 3.52
-  rb: {fileID: 752490662}
-  animator: {fileID: 752490666}
 --- !u!95 &752490666
 Animator:
   serializedVersion: 3
@@ -1670,6 +1656,37 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &752490667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752490661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c6f074ec79494641b0657a6e253538b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  oldTarget: {fileID: 0}
+  movementSpeed: 3.52
+  rb: {fileID: 752490662}
+  animator: {fileID: 752490666}
+--- !u!114 &752490668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752490661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37aa28335f1b7a549826d822b40252ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {fileID: 752490667}
+  attack: {fileID: 0}
 --- !u!1 &813980608
 GameObject:
   m_ObjectHideFlags: 0
@@ -1894,7 +1911,8 @@ GameObject:
   - component: {fileID: 1020100554}
   - component: {fileID: 1020100553}
   - component: {fileID: 1020100557}
-  - component: {fileID: 1020100556}
+  - component: {fileID: 1020100558}
+  - component: {fileID: 1020100559}
   m_Layer: 0
   m_Name: Mole_Enemy
   m_TagString: Untagged
@@ -1988,20 +2006,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1020100556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1020100552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbd6fc3e10fc0b24ca3d55509cae38be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  distance: 3
 --- !u!195 &1020100557
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2024,6 +2028,36 @@ NavMeshAgent:
   m_BaseOffset: 0.75
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1020100558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020100552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37aa28335f1b7a549826d822b40252ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {fileID: 1020100559}
+  attack: {fileID: 0}
+--- !u!114 &1020100559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020100552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd073394160b7c45aa1e3fd66534865, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  oldTarget: {fileID: 0}
+  speed: 2
+  distance: 3
 --- !u!1 &1025964590
 GameObject:
   m_ObjectHideFlags: 0
