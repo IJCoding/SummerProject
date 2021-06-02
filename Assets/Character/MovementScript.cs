@@ -22,7 +22,24 @@ public class MovementScript : MonoBehaviour
         animator.SetFloat("Horizontal", movement.x);        //Changing the float value in the animator based on input
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);      //Setting speed value with a squared magnitude for better optimization
-    }   
+
+        //flip the character attempt
+        //works fine althou when more character are implemented
+        //it might pop up with some errors
+        //---------------------------------------
+        Vector3 characterScale = transform.localScale;
+        if (Input.GetAxis("Horizontal") < 0)
+        {
+            characterScale.x = -1;
+        }
+        if (Input.GetAxis("Horizontal") > 0)
+        {
+            characterScale.x = 1;
+        }
+        transform.localScale = characterScale;
+        //--------------------------------------
+
+    }
 
     private void FixedUpdate()
     {
