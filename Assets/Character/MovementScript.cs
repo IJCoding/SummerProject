@@ -23,8 +23,7 @@ public class MovementScript : MonoBehaviour
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);      //Setting speed value with a squared magnitude for better optimization
 
-        //flip the character attempt
-        //works fine althou when more character are implemented
+        //flip the character attempt, works fine althou when more character are implemented
         //it might pop up with some errors
         //---------------------------------------
         Vector3 characterScale = transform.localScale;
@@ -37,8 +36,6 @@ public class MovementScript : MonoBehaviour
             characterScale.x = 1;
         }
         transform.localScale = characterScale;
-        //--------------------------------------
-
     }
 
     private void FixedUpdate()
